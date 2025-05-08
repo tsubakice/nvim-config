@@ -17,6 +17,7 @@ vim.opt.rtp:prepend(lazypath)
 
 -- lazy.nvim 相关配置
 require('lazy').setup({
+    spec = {{ import = 'extension.plugins' }},
     git = {
         log = { '-8' }, -- 插件仓库最近 8 条提交
         timeout = 180,
