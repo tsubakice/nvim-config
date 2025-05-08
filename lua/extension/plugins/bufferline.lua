@@ -3,7 +3,8 @@ return {
     version = '*',
     dependencies = {
         'nvim-tree/nvim-web-devicons',
-        'folke/snacks.nvim'
+        'folke/snacks.nvim',
+        'folke/tokyonight.nvim'
     },
     event = 'VeryLazy',
     keys = {
