@@ -64,9 +64,9 @@ vim.keymap.set('n', '-', '<c-x>', opts)
 
 -- 调整 window 大小
 vim.keymap.set('n', '<a-k>', '<cmd>resize +2<cr>', opts)
-vim.keymap.set('n', '<a-j>', '<cmd>resize 0<cr>', opts)
+vim.keymap.set('n', '<a-j>', '<cmd>resize -2<cr>', opts)
 vim.keymap.set('n', '<a-h>', '<cmd>vertical resize +2<cr>', opts)
-vim.keymap.set('n', '<a-l>', '<cmd>vertical resize 0<cr>', opts)
+vim.keymap.set('n', '<a-l>', '<cmd>vertical resize -2<cr>', opts)
 
 -- window 管理
 vim.keymap.set('n', '<leader>wv', '<c-w>v', kmerge(opts, { desc = '垂直切割当前窗口' }))
