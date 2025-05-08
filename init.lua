@@ -3,3 +3,6 @@ vim.loader.enable()
 
 -- 加载核心配置
 require('core')
+
+-- 加载扩展
+require('extension')
