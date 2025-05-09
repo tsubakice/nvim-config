@@ -11,6 +11,7 @@ return {
             preset = 'none',
             ['<c-p>'] = { 'select_prev', 'fallback' },
             ['<c-n>'] = { 'select_next', 'fallback' },
+            ['<c-e>'] = { 'cancel', 'fallback' },
             ['<cr>'] = { 'accept', 'fallback' },
             ['<tab>'] = { 'accept', 'fallback' }
         },
@@ -29,6 +30,15 @@ return {
                     from_top = true,
                     from_bottom = true
                 }
+            }
+        },
+        cmdline = {
+            keymap = {
+                preset = 'inherit',
+                ['<cr>'] = { 'fallback' }
+            },
+            completion = {
+                menu = { auto_show = true }
             }
         },
         signature = {

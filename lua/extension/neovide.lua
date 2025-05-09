@@ -23,5 +23,5 @@ if vim.g.neovide then
     vim.g.neovide_cursor_smooth_blink = true
 
     -- 粒子特效
-    vim.g.neovide_cursor_vfx_mode = { 'pixiedust', 'sonicboom' }
+    vim.g.neovide_cursor_vfx_mode = 'pixiedust'
 end
