@@ -40,6 +40,12 @@ vim.opt.incsearch = true -- 输入时搜索
 vim.opt.ignorecase = true -- 搜索时忽略字母大小写
 vim.opt.smartcase = true -- 搜索大写字母时, 忽略小写字母
 
+-- 配置光标闪烁
+vim.opt.guicursor = {
+    'n-v-c:block-blinkwait0-blinkon500-blinkoff500',
+    'i-ci-ve:ver25-blinkwait0-blinkon500-blinkoff500'
+}
+
 -- 开启终端真颜色
 vim.opt.termguicolors = true
 
