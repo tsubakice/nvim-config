@@ -36,7 +36,7 @@ return {
             globalstatus = true
         },
         extensions = { 'neo-tree' },
-        disabled_filetypes = {},
+        disabled_filetypes = { },
         sections = {
             lualine_a = {
                 {
@@ -57,17 +57,43 @@ return {
                 'branch'
             },
             lualine_c = {
-                { 'lsp_status', icon = ' ', ignore_lsp = { 'null-ls' } },
-                { 'diagnostics', update_in_insert = true }
+                {
+                    'lsp_status',
+                    icon = ' ',
+                    ignore_lsp = { 'null-ls' },
+                    symbols = {
+                        spinner = { '', '', '', '', '', '', '', '', '', '' },
+                        done = ''
+                    }
+                },
+                {
+                    'diagnostics',
+                    update_in_insert = true
+                }
             },
             lualine_x = {
-                { 'fileformat', padding = { right = 2 } },
-                { 'encoding', padding = { right = 2 } },
-                { 'filesize', padding = { right = 2 } }
+                {
+                    'fileformat',
+                    padding = { right = 2 }
+                },
+                {
+                    'encoding',
+                    padding = { right = 2 }
+                },
+                {
+                    'filesize',
+                    padding = { right = 2 }
+                }
             },
             lualine_y = {
-                { 'filetype', separator = { left = '' } },
-                { 'progress', padding = { right = 1 } }
+                {
+                    'filetype',
+                    separator = { left = '' }
+                },
+                {
+                    'progress',
+                    padding = { right = 1 }
+                }
             },
             lualine_z = {
                 {

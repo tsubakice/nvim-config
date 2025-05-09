@@ -5,6 +5,13 @@ return {
         indent = { enabled = true },
         quickfile = { enabled = true },
         bufdelete = { enabled = true },
+        notifier = {
+            enabled = true,
+            style = 'fancy',
+            wo = {
+                wrap = true
+            }
+        },
         words = {
             enabled = true,
             debounce = 100
