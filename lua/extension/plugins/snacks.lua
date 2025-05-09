@@ -4,12 +4,11 @@ return {
     opts = {
         indent = { enabled = true },
         bufdelete = { enabled = true },
+        rename = { enabled = true },
         notifier = {
             enabled = true,
             style = 'fancy',
-            wo = {
-                wrap = true
-            }
+            wo = { wrap = true }
         },
         words = {
             enabled = true,
