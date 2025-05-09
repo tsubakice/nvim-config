@@ -1,0 +1,19 @@
+{
+  "vue3 template": {
+    "prefix": "vue3",
+    "body": [
+      "<script setup lang=\"ts\">",
+      "$0",
+      "</script>",
+      "",
+      "<template>",
+      "",
+      "</template>",
+      "",
+      "<style scoped>",
+      "",
+      "</style>"
+    ],
+    "description": "vue3 template"
+  }
+}

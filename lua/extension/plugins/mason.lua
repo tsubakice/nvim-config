@@ -5,7 +5,12 @@ return {
         {
             'nvimdev/lspsaga.nvim',
             dependencies = {
-                'neovim/nvim-lspconfig',
+                {
+                    'neovim/nvim-lspconfig',
+                    dependencies = {
+                        'saghen/blink.cmp'
+                    }
+                },
                 'nvim-treesitter/nvim-treesitter',
                 'nvim-tree/nvim-web-devicons'
             }
@@ -67,6 +72,7 @@ return {
         local lspconfig = require('lspconfig')
         local registry = require('mason-registry')
         local mappings = require('mason-lspconfig.mappings')
+        local cmp = require('blink.cmp')
 
         -- lspsaga 相关配置
         require('lspsaga').setup({
@@ -108,9 +114,15 @@ return {
             end
         end
 
+        -- 配置 lsp 服务器
+        local configuration_lsp_server = function (config)
+            config.capabilities = cmp.get_lsp_capabilities()
+        end
+
         -- 启动 lsp 服务器
         local launch_lsp_server = function (server, config)
             install_lsp_server(server)
+            configuration_lsp_server(config)
             server = package_to_lspconfig(server)
             lspconfig[server].setup(config)
         end
