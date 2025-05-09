@@ -66,7 +66,24 @@ return {
                         }
                     }
                 }
-            }
+            },
+            ['html-lsp'] = {},
+            ['css-lsp'] = {},
+            ['typescript-language-server'] = {
+                init_options = {
+                    plugins = {
+                        {
+                            name = '@vue/typescript-plugin',
+                            location = vim.fn.stdpath('data') .. '\\mason\\packages\\vue-language-server\\node_modules\\@vue\\language-server',
+                            languages = { 'vue' }
+                        }
+                    }
+                },
+                filetypes = {
+                    'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue'
+                }
+            },
+            ['vue-language-server'] = {}
         }
 
         local lspconfig = require('lspconfig')

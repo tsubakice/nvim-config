@@ -23,8 +23,20 @@ return {
         }
     },
     config = function (_, opts)
-        require('nvim-treesitter.install').prefer_git = false
+
+        -- 配置 parser 下载镜像
+        local parsers = require('nvim-treesitter.parsers')
+        for _, config in pairs(parsers.get_parser_configs()) do
+            config.install_info.url = 'https://www.gitproxy.click/' .. config.install_info.url
+        end
+
+        -- 修改并应用配置
+        local install_config = require('nvim-treesitter.install')
+        install_config.prefer_git = true
+        install_config.compilers = { 'cc', 'gcc' }
         require('nvim-treesitter.configs').setup(opts)
+
+        -- 配置代码折叠
         vim.wo.foldmethod = 'expr'
         vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
         vim.wo.foldlevel = 100
