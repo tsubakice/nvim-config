@@ -3,7 +3,6 @@ return {
     event = 'VeryLazy',
     opts = {
         indent = { enabled = true },
-        quickfile = { enabled = true },
         bufdelete = { enabled = true },
         notifier = {
             enabled = true,
