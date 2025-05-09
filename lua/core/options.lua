@@ -42,7 +42,7 @@ vim.opt.smartcase = true -- 搜索大写字母时, 忽略小写字母
 
 -- 配置光标闪烁
 vim.opt.guicursor = {
-    'n-v-c:block-blinkwait0-blinkon500-blinkoff500',
+    'n-v-c-t:block-blinkwait0-blinkon500-blinkoff500',
     'i-ci-ve:ver25-blinkwait0-blinkon500-blinkoff500'
 }
 
