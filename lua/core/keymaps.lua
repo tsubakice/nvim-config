@@ -80,6 +80,3 @@ vim.keymap.set('n', '<leader>nh', '<cmd>nohlsearch<cr>', kmerge(opts, { desc= '�
 
 -- 快捷打开 Lazy 控制台
 vim.keymap.set('n', '<leader>L', '<cmd>Lazy<cr>', kmerge(opts, { desc = '打开 Lazy 控制台' }))
-
--- 快捷打开 Mason 控制台
-vim.keymap.set('n', '<leader>M', '<cmd>Mason<cr>', kmerge(opts, { desc = '打开 Mason 控制台' }))

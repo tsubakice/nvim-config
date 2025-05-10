@@ -57,6 +57,7 @@ vim.opt.colorcolumn = '80'
 
 -- 显示不可见字符
 vim.opt.list = true
+vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 
 -- 设置快捷键等待时间, 以 ms 为单位
 vim.opt.timeoutlen = 250

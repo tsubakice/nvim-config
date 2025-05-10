@@ -3,9 +3,8 @@ return {
     version = '*',
     dependencies = {
         'nvim-tree/nvim-web-devicons',
-        'folke/tokyonight.nvim'
+        'folke/tokyonight.nvim' -- 防止 buffer 下划线因为没加载主题而颜色不对
     },
-    event = 'VeryLazy',
     keys = {
         { 'H', '<cmd>BufferLineCyclePrev<cr>', desc = '跳转到上一个 buffer' },
         { 'L', '<cmd>BufferLineCycleNext<cr>', desc = '跳转到下一个 buffer' },
@@ -16,6 +15,7 @@ return {
     opts = {
         options = {
             indicator = { style = 'underline' },
+            separator_style = 'slope',
             offsets = {
                 {
                     filetype = 'neo-tree',
@@ -23,7 +23,8 @@ return {
                     text_align = 'center',
                     separator = true
                 }
-            }
+            },
+            diagnostics = 'nvim_lsp'
         }
     }
 }

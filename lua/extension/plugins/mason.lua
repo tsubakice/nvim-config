@@ -30,6 +30,7 @@ return {
     cmd = { 'Mason', 'MasonLog', 'MasonUpdate', 'MasonInstall' },
     event = 'VeryLazy',
     keys = {
+        { '<leader>M', '<cmd>Mason<cr>', desc = '打开 Mason 控制台' },
         { '<leader>lr', '<cmd>Lspsaga rename<cr>', desc = '重命名变量' },
         { '<leader>lc', '<cmd>Lspsaga code_action<cr>', desc = '列出错误诊断措施' },
         { '<leader>ld', '<cmd>Lspsaga goto_definition<cr>', desc = '查看定义' },

@@ -7,9 +7,10 @@ return {
         'nvim-telescope/telescope-ui-select.nvim'
     },
     keys = {
+        { '<leader>fd', '<cmd>Telescope diagnostics<cr>', desc = '使用 telescope 查找当前 buffer 的 lsp 诊断' },
         { '<leader>ff', '<cmd>Telescope find_files<cr>', desc = '使用 telescope 查找文件' },
         { '<leader>fg', '<cmd>Telescope live_grep<cr>', desc = '使用 telescope 查找文本片段' },
-        { '<leader><space>', '<cmd>Telescope buffers<cr>', desc = '使用 telescope 查找 buffer' },
+        { '<leader>fb', '<cmd>Telescope buffers<cr>', desc = '使用 telescope 查找 buffer' },
         { '<leader>fr', '<cmd>Telescope resume<cr>', desc = '打开最近的 telescope 窗口' },
         { '<leader>?', '<cmd>Telescope oldfiles<cr>', desc = '使用 telescope 查找历史文件' },
         { '<leader>/', '<cmd>Telescope current_buffer_fuzzy_find<cr>', desc = '使用 telescope 查找当前 buffer 的指定内容' }
