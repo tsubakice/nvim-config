@@ -12,8 +12,7 @@ return {
             ['<c-p>'] = { 'select_prev', 'fallback' },
             ['<c-n>'] = { 'select_next', 'fallback' },
             ['<c-e>'] = { 'cancel', 'fallback' },
-            ['<cr>'] = { 'accept', 'fallback' },
-            ['<tab>'] = { 'accept', 'fallback' }
+            ['<cr>'] = { 'accept', 'fallback' }
         },
         appearance = { nerd_font_variant = 'normal' },
         completion = {
@@ -27,6 +26,7 @@ return {
         cmdline = {
             keymap = {
                 preset = 'inherit',
+                ['<tab>'] = { 'accept', 'fallback' },
                 ['<cr>'] = { 'fallback' }
             },
             completion = {

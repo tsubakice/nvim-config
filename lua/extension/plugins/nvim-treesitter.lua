@@ -27,7 +27,7 @@ return {
         -- 配置 parser 下载镜像
         local parsers = require('nvim-treesitter.parsers')
         for _, config in pairs(parsers.get_parser_configs()) do
-            config.install_info.url = 'https://www.gitproxy.click/' .. config.install_info.url
+            config.install_info.url = 'https://github.moeyy.xyz/' .. config.install_info.url
         end
 
         -- 修改并应用配置

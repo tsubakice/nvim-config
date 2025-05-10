@@ -1,0 +1,9 @@
+{
+  "sout template": {
+    "prefix": "sout",
+    "body": [
+      "System.out.println($0);"
+    ],
+    "description": "sout template"
+  }
+}
