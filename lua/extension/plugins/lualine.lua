@@ -33,9 +33,9 @@ return {
                     c = { bg = '#1a1b26', fg = '#c6c6c6' }
                 }
             },
+            globalstatus = true,
             component_separators = '',
-            section_separators = { left = '', right = '' },
-            globalstatus = true
+            section_separators = { left = '', right = '' }
         },
         extensions = { 'neo-tree' },
         disabled_filetypes = { },

@@ -7,9 +7,7 @@ return {
             dependencies = {
                 {
                     'neovim/nvim-lspconfig',
-                    dependencies = {
-                        'saghen/blink.cmp'
-                    }
+                    dependencies = 'saghen/blink.cmp'
                 },
                 'nvim-treesitter/nvim-treesitter',
                 'nvim-tree/nvim-web-devicons'
@@ -27,7 +25,6 @@ return {
             }
         }
     },
-    cmd = { 'Mason', 'MasonLog', 'MasonUpdate', 'MasonInstall' },
     event = 'VeryLazy',
     keys = {
         { '<leader>M', '<cmd>Mason<cr>', desc = '打开 Mason 控制台' },

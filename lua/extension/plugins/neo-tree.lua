@@ -41,11 +41,13 @@ return {
                 ['y'] = 'copy_to_clipboard',
                 ['x'] = 'cut_to_clipboard',
                 ['p'] = 'paste_from_clipboard',
+                ['P'] = {
+                    'toggle_preview',
+                    config = { use_float = true, use_image_nvim = true }
+                },
                 ['c'] = {
                     'copy',
-                    config = {
-                        show_path = 'none'
-                    }
+                    config = { show_path = 'none' }
                 },
                 ['m'] = 'move',
                 ['q'] = 'close_window',
@@ -63,9 +65,7 @@ return {
         },
         filesystem = {
             filtered_items = {
-                always_show_by_pattern = {
-                    '.*ignore'
-                }
+                always_show_by_pattern = { '.*ignore' }
             },
             window = {
                 mappings = {

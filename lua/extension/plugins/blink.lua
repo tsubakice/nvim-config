@@ -15,21 +15,13 @@ return {
             ['<cr>'] = { 'accept', 'fallback' },
             ['<tab>'] = { 'accept', 'fallback' }
         },
-        appearance = {
-            nerd_font_variant = 'normal'
-        },
+        appearance = { nerd_font_variant = 'normal' },
         completion = {
             menu = { border = 'rounded' },
             ghost_text = { enabled = true },
             documentation = {
                 auto_show = true,
                 window = { border = 'rounded' }
-            },
-            list = {
-                cycle = {
-                    from_top = true,
-                    from_bottom = true
-                }
             }
         },
         cmdline = {
@@ -59,9 +51,7 @@ return {
                     score_offset = 15,
                     opts = { insert = true },
                     should_show_items = function()
-                        return vim.tbl_contains({
-                            'gitcommit', 'markdown'
-                        }, vim.o.filetype)
+                        return vim.tbl_contains({ 'gitcommit', 'markdown' }, vim.o.filetype)
                     end
                 }
             }

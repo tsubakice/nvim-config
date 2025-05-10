@@ -17,14 +17,8 @@ return {
         input = { enabled = true },
         indent = { enabled = true },
         bufdelete = { enabled = true },
-        notifier = {
-            enabled = true,
-            style = 'fancy'
-        },
-        words = {
-            enabled = true,
-            debounce = 100
-        },
+        notifier = { enabled = true, style = 'fancy' },
+        words = { enabled = true, debounce = 100 },
         statuscolumn = {
             enabled = true,
             folds = { open = true }
