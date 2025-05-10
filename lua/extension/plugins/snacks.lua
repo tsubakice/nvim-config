@@ -1,6 +1,10 @@
 return {
     'folke/snacks.nvim',
     event = 'VeryLazy',
+    dependencies = {
+        'nvim-lualine/lualine.nvim',
+        'akinsho/bufferline.nvim'
+    },
     opts = {
         indent = { enabled = true },
         bufdelete = { enabled = true },
