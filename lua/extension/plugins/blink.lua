@@ -10,11 +10,10 @@ return {
     opts = {
         keymap = {
             preset = 'none',
-            ['<c-p>'] = { 'select_prev', 'fallback' },
+            ['<c-e>'] = { 'hide', 'fallback' },
             ['<c-n>'] = { 'select_next', 'fallback' },
-            ['<c-e>'] = { 'cancel', 'fallback' },
-            ['<tab>'] = { 'select_and_accept', 'fallback' },
-            ['<cr>'] = { 'select_and_accept', 'fallback' }
+            ['<c-p>'] = { 'select_prev', 'fallback' },
+            ['<tab>'] = { 'accept', 'fallback' }
         },
         appearance = { nerd_font_variant = 'normal' },
         completion = {
@@ -37,10 +36,7 @@ return {
         },
         cmdline = {
             enabled = true,
-            keymap = {
-                preset = 'inherit',
-                ['<cr>'] = { 'fallback' }
-            },
+            keymap = { preset = 'inherit' },
             completion = {
                 menu = { auto_show = true }
             }
