@@ -12,13 +12,14 @@ return {
         { '<leader>fg', '<cmd>Telescope live_grep<cr>', desc = '使用 telescope 查找文本片段' },
         { '<leader>fb', '<cmd>Telescope buffers<cr>', desc = '使用 telescope 查找 buffer' },
         { '<leader>fr', '<cmd>Telescope resume<cr>', desc = '打开最近的 telescope 窗口' },
+        { '<leader>fo', '<cmd>Telescope vim_options<cr>', desc = '使用 telescope 查找 vim 的选项' },
         { '<leader>?', '<cmd>Telescope oldfiles<cr>', desc = '使用 telescope 查找历史文件' },
         { '<leader>/', '<cmd>Telescope current_buffer_fuzzy_find<cr>', desc = '使用 telescope 查找当前 buffer 的指定内容' }
     },
     config = function ()
         local telescope = require('telescope')
         telescope.setup({
-            defaults = { prompt_prefix = '   ', },
+            defaults = { prompt_prefix = '   ' },
             extensions = {
                 fzf = {
                     fuzzy = true,

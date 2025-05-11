@@ -1,0 +1,71 @@
+{
+  "import": {
+    "prefix": "import",
+    "body": [
+      "import { $0 } from '${1:module}'"
+    ],
+    "description": "import external module"
+  },
+  "log": {
+    "prefix": "log",
+    "body": [
+      "console.log($1)"
+    ],
+    "description": "log to the console"
+  },
+  "if": {
+    "prefix": "if",
+    "body": [
+      "if (${1:condition}) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "if statement"
+  },
+  "elif": {
+    "prefix": "elif",
+    "body": [
+      "else if (${1:condition}) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "else if statement"
+  },
+  "else": {
+    "prefix": "else",
+    "body": [
+      "else {",
+      "\t$0",
+      "}"
+    ],
+    "description": "else statement"
+  },
+  "router": {
+    "prefix": "router",
+    "body": [
+      "import { createRouter, createWebHistory, type RouteRecordRaw } from 'vue-router'",
+      "",
+      "const routes: RouteRecordRaw[] = []",
+      "",
+      "const router = createRouter({",
+      "  history: createWebHistory(import.meta.env.BASE_URL),",
+      "  routes: routes",
+      "})",
+      "",
+      "export default router"
+    ],
+    "description": "router template"
+  },
+  "pinia": {
+    "prefix": "pinia",
+    "body": [
+      "import { createPinia } from 'pinia'",
+      "import persistedState from 'pinia-plugin-persistedstate'",
+      "",
+      "const pinia = createPinia().use(persistedState)",
+      "",
+      "export default pinia"
+    ],
+    "description": "pinia template"
+  }
+}

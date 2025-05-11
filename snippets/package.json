@@ -1,0 +1,14 @@
+{
+  "name": "personal-snippets",
+  "engines": {
+    "neovim": "^0.0.1"
+  },
+  "contributes": {
+    "snippets": [
+      { "language": "html", "path": "./html/html.json" },
+      { "language": "java", "path": "./java/java.json" },
+      { "language": "typescript", "path": "./typescript/typescript.json" },
+      { "language": "vue", "path": "./vue/vue.json" }
+    ]
+  }
+}

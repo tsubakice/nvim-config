@@ -1,5 +1,6 @@
 -- 设置主键
 vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
 
 -- 合并两个 tab
 local kmerge = function (t1, t2) return vim.tbl_deep_extend('keep', t1, t2) end

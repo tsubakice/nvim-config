@@ -1,6 +1,5 @@
 return {
     'nvim-treesitter/nvim-treesitter',
-    cmd = { 'TSInstallInfo', 'TSInstall', 'TSUpdate' },
     event = 'VeryLazy',
     build = ':TSUpdate',
     opts = {

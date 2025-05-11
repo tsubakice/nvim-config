@@ -1,5 +1,5 @@
 {
-  "vue3 template": {
+  "vue3": {
     "prefix": "vue3",
     "body": [
       "<script setup lang=\"ts\">",

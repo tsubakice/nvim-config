@@ -2,21 +2,33 @@ return {
     'saghen/blink.cmp',
     version = '1.*',
     dependencies = {
+        { 'L3MON4D3/LuaSnip', version = 'v2.*' },
         'rafamadriz/friendly-snippets',
         'moyiz/blink-emoji.nvim'
     },
-    event = 'VeryLazy',
+    event = { 'InsertEnter', 'CmdlineEnter' },
     opts = {
         keymap = {
             preset = 'none',
             ['<c-p>'] = { 'select_prev', 'fallback' },
             ['<c-n>'] = { 'select_next', 'fallback' },
             ['<c-e>'] = { 'cancel', 'fallback' },
-            ['<cr>'] = { 'accept', 'fallback' }
+            ['<tab>'] = { 'select_and_accept', 'fallback' },
+            ['<cr>'] = { 'select_and_accept', 'fallback' }
         },
         appearance = { nerd_font_variant = 'normal' },
         completion = {
-            menu = { border = 'rounded' },
+            menu = {
+                border = 'rounded',
+                draw = {
+                    columns = {
+                        { 'kind_icon' },
+                        { 'label', 'label_description', gap = 2 },
+                        { 'source_name' }
+                    }
+                }
+
+            },
             ghost_text = { enabled = true },
             documentation = {
                 auto_show = true,
@@ -24,9 +36,9 @@ return {
             }
         },
         cmdline = {
+            enabled = true,
             keymap = {
                 preset = 'inherit',
-                ['<tab>'] = { 'accept', 'fallback' },
                 ['<cr>'] = { 'fallback' }
             },
             completion = {
@@ -37,8 +49,9 @@ return {
             enabled = true,
             window = { border = 'rounded' }
         },
+        snippets = { preset = 'luasnip' },
         sources = {
-            default = { 'lsp', 'path', 'snippets', 'buffer', 'lazydev', 'emoji' },
+            default = { 'lsp', 'path', 'buffer', 'snippets', 'lazydev', 'emoji' },
             providers = {
                 lazydev = {
                     name = 'LazyDev',
@@ -58,5 +71,13 @@ return {
         },
         fuzzy = { implementation = 'prefer_rust_with_warning' }
     },
-    opts_extend = { 'sources.default' }
+    opts_extend = { 'sources.default' },
+    config = function (_, opts)
+        require('blink.cmp').setup(opts)
+        require('luasnip.loaders.from_vscode').lazy_load({
+            paths = {
+                vim.fn.stdpath('config') .. '\\snippets'
+            }
+        })
+    end
 }

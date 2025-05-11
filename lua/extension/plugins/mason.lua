@@ -65,6 +65,7 @@ return {
                     }
                 }
             },
+            ['json-lsp'] = {},
             ['html-lsp'] = {},
             ['css-lsp'] = {},
             ['typescript-language-server'] = {
@@ -91,9 +92,8 @@ return {
 
         -- lspsaga 相关配置
         require('lspsaga').setup({
-            symbol_in_winbar = { folder_level = 0 },
             code_action = { show_server_name = true },
-            ui = { border = 'rounded' }
+            ui = { border = 'rounded', code_action = '' }
         })
 
         -- mason-org/mason.nvim 相关配置
@@ -131,7 +131,13 @@ return {
 
         -- 配置 lsp 服务器
         local configuration_lsp_server = function (config)
-            config.capabilities = cmp.get_lsp_capabilities()
+            config.capabilities = cmp.get_lsp_capabilities({
+                textDocument = {
+                    completion = {
+                        completionItem = { snippetSupport = true }
+                    }
+                }
+            })
         end
 
         -- 启动 lsp 服务器

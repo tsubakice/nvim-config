@@ -55,6 +55,10 @@ vim.opt.signcolumn = 'yes'
 -- 设置最大编辑列数提示线
 vim.opt.colorcolumn = '80'
 
+-- 配置字符编码
+vim.opt.encoding = 'utf-8'
+vim.opt.fileencoding = 'utf-8'
+
 -- 显示不可见字符
 vim.opt.list = true
 vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }

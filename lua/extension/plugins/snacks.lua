@@ -2,18 +2,15 @@ return {
     'folke/snacks.nvim',
     dependencies = { -- 防止 bufferline 和 lualine 在 snacks_dashboard 中显示异常
         'akinsho/bufferline.nvim',
-        'nvim-lualine/lualine.nvim'
+        'nvim-lualine/lualine.nvim',
+        {
+            'folke/noice.nvim',
+            dependencies = 'MunifTanjim/nui.nvim',
+            event = 'VeryLazy'
+        }
     },
     event = 'VeryLazy',
     opts = {
-        styles = {
-            input = {
-                keys = {
-                    n_esc = { '<c-c>', { 'cmp_close', 'cancel' }, mode = 'n', expr = true },
-                    i_esc = { '<c-c>', { 'cmp_close', 'stopinsert' }, mode = 'i', expr = true }
-                }
-            }
-        },
         input = { enabled = true },
         indent = { enabled = true },
         bufdelete = { enabled = true },
@@ -47,6 +44,23 @@ return {
     },
     config = function (_, opts)
         require('snacks').setup(opts)
+        require('noice').setup({
+            lsp = {
+                hover = { silent = true },
+                progress = { enabled = false },
+                override = {
+                    ['vim.lsp.util.convert_input_to_markdown_lines'] = true,
+                    ['vim.lsp.util.stylize_markdown'] = true
+                }
+            },
+            presets = {
+                bottom_search = true,
+                command_palette = true,
+                long_message_to_split = true,
+                inc_rename = true,
+                lsp_doc_border = true
+            }
+        })
 
         -- 创建高级 lsp 进度
         local progress = vim.defaulttable()
