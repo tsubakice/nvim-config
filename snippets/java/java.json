@@ -34,8 +34,8 @@
     ],
     "description": "if statement"
   },
-  "elif": {
-    "prefix": "elif",
+  "else if": {
+    "prefix": "else if",
     "body": [
       "else if (${1:condition}) {",
       "\t$0",

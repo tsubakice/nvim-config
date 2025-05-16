@@ -13,7 +13,8 @@ return {
             ['<c-e>'] = { 'hide', 'fallback' },
             ['<c-n>'] = { 'select_next', 'fallback' },
             ['<c-p>'] = { 'select_prev', 'fallback' },
-            ['<tab>'] = { 'accept', 'fallback' }
+            ['<tab>'] = { 'snippet_forward', 'accept', 'fallback' },
+            ['<s-tab>'] = { 'snippet_backward', 'fallback' }
         },
         appearance = { nerd_font_variant = 'normal' },
         completion = {
@@ -36,7 +37,11 @@ return {
         },
         cmdline = {
             enabled = true,
-            keymap = { preset = 'inherit' },
+            keymap = {
+                preset = 'inherit',
+                ['<up>'] = { 'fallback' },
+                ['<down>'] = { 'fallback' }
+            },
             completion = {
                 menu = { auto_show = true }
             }
@@ -70,6 +75,10 @@ return {
     opts_extend = { 'sources.default' },
     config = function (_, opts)
         require('blink.cmp').setup(opts)
+        require('luasnip').config.set_config({
+            history = true,
+            update_events = 'TextChanged,TextChangedI'
+        })
         require('luasnip.loaders.from_vscode').lazy_load({
             paths = {
                 vim.fn.stdpath('config') .. '\\snippets'

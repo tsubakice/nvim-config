@@ -48,20 +48,26 @@ return {
     build = ':MasonUpdate',
     config = function ()
 
-        -- 配置 lsp 在 insert 模式中显示
-        vim.diagnostic.config({
-            virtual_text = true,
-            update_in_insert = true
-        })
-
         -- lsp 服务器名称及其配置
         local lsp_servers = {
             ['lua-language-server'] = {
                 settings = {
                     Lua = {
+                        runtime = {
+                            version = 'LuaJIT',
+                            path = vim.split(package.path, ';')
+                        },
                         diagnostics = {
                             globals = { 'vim', 'Snacks' }
-                        }
+                        },
+                        workspace = {
+                            checkThirdParty = false,
+                            library = {
+                                [vim.fn.stdpath('config') .. 'lua'] = true,
+                                [vim.env.VIMRUNTIME .. '/lua'] = true
+                            }
+                        },
+                        telemetry = { enable = false }
                     }
                 }
             },
@@ -82,8 +88,19 @@ return {
                     'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue'
                 }
             },
-            ['vue-language-server'] = {}
+            ['vue-language-server'] = {
+                init_options = {
+                    vue = { hybridMode = true }
+                },
+                filetypes = { 'vue' }
+            }
         }
+
+        -- 配置 lsp 在 insert 模式中显示
+        vim.diagnostic.config({
+            virtual_text = true,
+            update_in_insert = true
+        })
 
         local lspconfig = require('lspconfig')
         local registry = require('mason-registry')
@@ -109,9 +126,7 @@ return {
                     package_pending = ' ',
                     package_uninstalled = ' '
                 },
-                keymaps = {
-                    uninstall_package = 'x'
-                }
+                keymaps = { uninstall_package = 'x' }
             }
         })
 
@@ -131,13 +146,9 @@ return {
 
         -- 配置 lsp 服务器
         local configuration_lsp_server = function (config)
-            config.capabilities = cmp.get_lsp_capabilities({
-                textDocument = {
-                    completion = {
-                        completionItem = { snippetSupport = true }
-                    }
-                }
-            })
+            local capabilities = vim.lsp.protocol.make_client_capabilities()
+            capabilities = vim.tbl_deep_extend('force', capabilities, config.capabilities or {})
+            config.capabilities = cmp.get_lsp_capabilities(capabilities)
         end
 
         -- 启动 lsp 服务器
