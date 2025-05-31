@@ -5,6 +5,8 @@ return {
         'nvim-lualine/lualine.nvim'
     },
     opts = {
-        bufdelete = { enabled = true }
+        bufdelete = { enabled = true },
+        indent = { enabled = true },
+        words = { enabled = true, debounce = 100 }
     }
 }
