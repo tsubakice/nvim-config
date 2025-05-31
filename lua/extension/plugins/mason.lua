@@ -70,6 +70,7 @@ return {
         local lspconfig = require('lspconfig')
         local registry = require('mason-registry')
         local mappings = require('mason-lspconfig.mappings')
+        local cmp = require('blink.cmp')
 
         -- lspsaga 相关配置
         require('lspsaga').setup({
@@ -120,7 +121,7 @@ return {
                 capabilities = vim.tbl_deep_extend('force', capabilities, config.capabilities)
             end
             -- 再次合并 blink 提供的 capabilities
-            config.capabilities = capabilities
+            config.capabilities = cmp.get_lsp_capabilities(capabilities)
         end
 
         -- 启动 lsp 服务器
