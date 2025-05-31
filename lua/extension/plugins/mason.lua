@@ -12,7 +12,8 @@ return {
                     branch = 'master'
                 }
             }
-        }
+        },
+        'b0o/schemastore.nvim'
     },
     build = ':MasonUpdate',
     lazy = false,
@@ -45,6 +46,14 @@ return {
                             globals = { 'vim', 'Snacks' }
                         },
                         telemetry = { enable = false }
+                    }
+                }
+            },
+            ['json-lsp'] = {
+                settings = {
+                    json = {
+                        schemas = require('schemastore').json.schemas(),
+                        validate = { enable = true }
                     }
                 }
             }
