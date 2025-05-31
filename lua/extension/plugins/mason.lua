@@ -83,6 +83,9 @@ return {
 
         -- mason-org/mason.nvim 相关配置
         require('mason').setup({
+            github = { -- 重定向 lsp 服务器的下载地址
+                download_url_template = 'https://github.moeyy.xyz/https://github.com/%s/releases/download/%s/%s'
+            },
             ui = {
                 border = 'rounded', -- mason console 边框样式, 可选值请参阅 nvim_open_win()
                 backdrop = 100,
