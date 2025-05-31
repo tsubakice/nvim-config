@@ -4,7 +4,11 @@ return {
     dependencies = {
         'rafamadriz/friendly-snippets',
         'nvim-tree/nvim-web-devicons',
-        'onsails/lspkind.nvim'
+        'onsails/lspkind.nvim',
+        {
+            'L3MON4D3/LuaSnip',
+            version = 'v2.*'
+        }
     },
     opts = {
         keymap = {
@@ -12,8 +16,9 @@ return {
             ['<c-e>'] = { 'hide', 'fallback' },
             ['<c-n>'] = { 'select_next', 'fallback' },
             ['<c-p>'] = { 'select_prev', 'fallback' },
-            ['<tab>'] = { 'snippet_forward', 'accept', 'fallback' },
-            ['<s-tab>'] = { 'snippet_backward', 'fallback' }
+            ['<tab>'] = { 'accept', 'fallback' },
+            ['<cr>'] = { 'snippet_forward', 'fallback' },
+            ['<bs>'] = { 'snippet_backward', 'fallback' }
         },
         appearance = { nerd_font_variant = 'normal' },
         completion = {
@@ -54,7 +59,9 @@ return {
             keymap = {
                 preset = 'inherit',
                 ['<up>'] = { 'fallback' },
-                ['<down>'] = { 'fallback' }
+                ['<down>'] = { 'fallback' },
+                ['<cr>'] = { 'fallback' },
+                ['<bs>'] = { 'fallback' }
             },
             completion = {
                 menu = { auto_show = true }
@@ -64,10 +71,19 @@ return {
             enabled = true,
             window = { border = 'rounded' }
         },
+        snippets = { preset = 'luasnip' },
         sources = {
             default = { 'lsp', 'path', 'snippets', 'buffer' }
         },
         fuzzy = { implementation = 'prefer_rust_with_warning' }
     },
-    opts_extend = { 'sources.default' }
+    opts_extend = { 'sources.default' },
+    config = function (_, opts)
+        require('blink.cmp').setup(opts)
+        require('luasnip.loaders.from_vscode').lazy_load({
+            paths = {
+                vim.fn.stdpath('config')
+            }
+        })
+    end
 }

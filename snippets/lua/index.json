@@ -1,0 +1,43 @@
+{
+  "require": {
+    "prefix": "req",
+    "body":[
+      "require(${1:module})"
+    ],
+    "description": "require module"
+  },
+  "return": {
+    "prefix": "ret",
+    "body": [
+      "return $0"
+    ],
+    "description": "return value"
+  },
+  "function": {
+    "prefix": "fun",
+    "body": [
+      "function $1($2)",
+      "\t$0",
+      "end"
+    ],
+    "description": "define a function"
+  },
+  "for-ipairs": {
+    "prefix": "fori",
+    "body": [
+      "for ${1:i}, ${2:x} in ipairs(${3:t}) do",
+      "\t$0",
+      "end"
+    ],
+    "description": "for i, x in ipairs(t)"
+  },
+  "for-pairs": {
+    "prefix": "forp",
+    "body": [
+      "for ${1:k}, ${2:v} in pairs(${3:t}) do",
+      "\t$0",
+      "end"
+    ],
+    "description": "for k, v in pairs(t)"
+  }
+}
