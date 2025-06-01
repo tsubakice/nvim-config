@@ -1,0 +1,82 @@
+{
+  "main": {
+    "prefix": "main",
+    "body": [
+      "if __name__ == '_main__':",
+      "\t${0:pass}"
+    ],
+    "description": "execute code if the file is executed directly"
+  },
+  "function": {
+    "prefix": "def",
+    "body": [
+      "def ${1:func}(${2:params}):",
+      "\t${0:pass}"
+    ],
+    "description": "function definition"
+  },
+  "import": {
+    "prefix": "imp",
+    "body": [
+      "import ${0:module}"
+    ],
+    "description": "import module"
+  },
+  "from": {
+    "prefix": "from",
+    "body": [
+      "from ${1:package} import ${0:module}"
+    ],
+    "description": "import a module from a package"
+  },
+  "if": {
+    "prefix": "if",
+    "body": [
+      "if ${1:condition}:",
+      "\t${0:pass}"
+    ],
+    "description": "if statement"
+  },
+  "elif": {
+    "prefix": "elif",
+    "body": [
+      "elif ${1:condition}:",
+      "\t${0:pass}"
+    ],
+    "description": "elif statement"
+  },
+  "else": {
+    "prefix": "else",
+    "body": [
+      "else",
+      "\t${0:pass}"
+    ],
+    "description": "else statement"
+  },
+  "ifelse": {
+    "prefix": "ifelse",
+    "body": [
+      "if ${1:condition}:",
+      "\t${2:pass}",
+      "else:",
+      "\t${0:pass}"
+    ],
+    "description": "if statement and else"
+  },
+  "for": {
+    "prefix": "for",
+    "body": [
+      "for ${1:value} in ${2:iterable}:",
+      "\t${3:pass}"
+    ],
+    "description": "for loop"
+  },
+  "while": {
+    "prefix": "while",
+    "body": [
+      "while ${1:condition}:",
+      "\t${2:pass}"
+    ],
+    "description": "while loop"
+  }
+}

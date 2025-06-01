@@ -17,8 +17,8 @@ return {
             ['<c-n>'] = { 'select_next', 'fallback' },
             ['<c-p>'] = { 'select_prev', 'fallback' },
             ['<tab>'] = { 'accept', 'fallback' },
-            ['<cr>'] = { 'snippet_forward', 'fallback' },
-            ['<bs>'] = { 'snippet_backward', 'fallback' }
+            ['<c-]>'] = { 'snippet_forward', 'fallback' },
+            ['<c-[>'] = { 'snippet_backward', 'fallback' }
         },
         appearance = { nerd_font_variant = 'normal' },
         completion = {
@@ -59,9 +59,7 @@ return {
             keymap = {
                 preset = 'inherit',
                 ['<up>'] = { 'fallback' },
-                ['<down>'] = { 'fallback' },
-                ['<cr>'] = { 'fallback' },
-                ['<bs>'] = { 'fallback' }
+                ['<down>'] = { 'fallback' }
             },
             completion = {
                 menu = { auto_show = true }

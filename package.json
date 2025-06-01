@@ -2,7 +2,9 @@
   "name": "personal-snippets",
   "contributes": {
     "snippets": [
-      { "language": "lua", "path": "./snippets/lua/index.json" }
+      { "language": "json", "path": "./snippets/json/index.json" },
+      { "language": "lua", "path": "./snippets/lua/index.json" },
+      { "language": "python", "path": "./snippets/python/index.json" }
     ]
   }
 }
