@@ -42,9 +42,11 @@ return {
             ['lua-language-server'] = {
                 settings = {
                     Lua = {
+                        runtime = { version = 'LuaJIT' },
                         diagnostics = {
                             globals = { 'vim', 'Snacks' }
                         },
+                        workspace = { checkThirdParty = false },
                         telemetry = { enable = false }
                     }
                 }
@@ -54,6 +56,16 @@ return {
                     json = {
                         schemas = require('schemastore').json.schemas(),
                         validate = { enable = true }
+                    }
+                }
+            },
+            pyright = {
+                settings = {
+                    python = {
+                        autoSearchPaths = true,
+                        useLibraryCodeForTypes = true,
+                        diagnosticMode = 'workspace',
+                        typeCheckingMode = 'basic'
                     }
                 }
             }
