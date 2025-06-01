@@ -5,7 +5,9 @@ return {
     lazy = false,
     opts = {
         ensure_installed = {
-            'lua', 'vim', 'vimdoc', 'markdown', 'markdown_inline'
+            'lua', 'vim', 'vimdoc', 'markdown', 'markdown_inline',
+            'json', 'xml', 'yaml', 'html', 'css', 'vue', 'typescript',
+            'javascript'
         },
         highlight = {
             enable = true,
