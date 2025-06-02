@@ -13,7 +13,7 @@ return {
         { '<leader>fg', '<cmd>Telescope live_grep<cr>', desc = '查找文本片段' },
         { '<leader>fb', '<cmd>Telescope buffers<cr>', desc = '查找 buffer' },
         { '<leader>fr', '<cmd>Telescope resume<cr>', desc = '打开最近的 telescope 窗口' },
-        { '<leader>fo', '<cmd>Telescope vim_options<cr>', desc = '查找 vim 的选项' },
+        { '<leader>fo', '<cmd>Telescope vim_options<cr>', desc = '查找 nvim 的选项' },
         { '<leader>fm', '<cmd>Telescope marks<cr>', desc = '查找标记' },
         { '<leader>?', '<cmd>Telescope oldfiles<cr>', desc = '查找历史文件' },
         { '<leader>/', '<cmd>Telescope current_buffer_fuzzy_find<cr>', desc = '查找当前 buffer 的文本片段' }
