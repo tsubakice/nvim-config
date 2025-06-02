@@ -1,28 +1,37 @@
 {
-  "require": {
-    "prefix": "req",
-    "body":[
-      "require(${1:module})"
-    ],
-    "description": "require module"
-  },
-  "return": {
-    "prefix": "ret",
+  "sout": {
+    "prefix": "sout",
     "body": [
-      "return $0"
+      "print(${0:expr})"
     ],
-    "description": "return value"
+    "description": "print the expr"
   },
-  "function": {
-    "prefix": "fun",
+  "if": {
+    "prefix": "if",
     "body": [
-      "function $1($2)",
+      "if ${1:condition} then",
       "\t$0",
       "end"
     ],
-    "description": "define a function"
+    "description": "if statement"
   },
-  "for-ipairs": {
+  "else": {
+    "prefix": "else",
+    "body": [
+      "else",
+      "\t$0"
+    ],
+    "description": "else statement"
+  },
+  "elseif": {
+    "prefix": "elseif",
+    "body": [
+      "elseif ${1:condition} then",
+      "\t$0"
+    ],
+    "description": "elseif statement"
+  },
+  "fori": {
     "prefix": "fori",
     "body": [
       "for ${1:i}, ${2:x} in ipairs(${3:t}) do",
@@ -31,7 +40,7 @@
     ],
     "description": "for i, x in ipairs(t)"
   },
-  "for-pairs": {
+  "forp": {
     "prefix": "forp",
     "body": [
       "for ${1:k}, ${2:v} in pairs(${3:t}) do",
@@ -39,5 +48,14 @@
       "end"
     ],
     "description": "for k, v in pairs(t)"
+  },
+  "while": {
+    "prefix": "while",
+    "body": [
+      "while ${1:condition} do",
+      "\t$0",
+      "end"
+    ],
+    "description": "while loop"
   }
 }

@@ -40,8 +40,8 @@ vim.keymap.set('v', 'H', '<gv', opts)
 vim.keymap.set('v', 'L', '>gv', opts)
 
 -- 快捷移动到行头行尾
-vim.keymap.set({ 'n', 'v' }, '<', '^', opts)
-vim.keymap.set({ 'n', 'v' }, '>', '$', opts)
+vim.keymap.set({ 'n', 'v', 'o' }, '<', '^', opts)
+vim.keymap.set({ 'n', 'v', 'o' }, '>', '$', opts)
 
 -- 配置一行内上下移动(不影响行与行之间的移动)
 vim.keymap.set('n', 'j', [[v:count ? 'j' : 'gj']], kmerge(opts, { expr = true }))

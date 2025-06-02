@@ -5,7 +5,7 @@ return {
         opts = {
             modes = {
                 insert = true,
-                command = true,
+                command = false,
                 terminal = false
             }
         }

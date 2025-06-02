@@ -1,4 +1,11 @@
 {
+  "sout": {
+    "prefix": "sout",
+    "body": [
+      "print(${0:expr})"
+    ],
+    "description": "print the expr"
+  },
   "main": {
     "prefix": "main",
     "body": [
@@ -6,28 +13,6 @@
       "\t${0:pass}"
     ],
     "description": "execute code if the file is executed directly"
-  },
-  "function": {
-    "prefix": "def",
-    "body": [
-      "def ${1:func}(${2:params}):",
-      "\t${0:pass}"
-    ],
-    "description": "function definition"
-  },
-  "import": {
-    "prefix": "imp",
-    "body": [
-      "import ${0:module}"
-    ],
-    "description": "import module"
-  },
-  "from": {
-    "prefix": "from",
-    "body": [
-      "from ${1:package} import ${0:module}"
-    ],
-    "description": "import a module from a package"
   },
   "if": {
     "prefix": "if",
@@ -37,6 +22,14 @@
     ],
     "description": "if statement"
   },
+  "else": {
+    "prefix": "else",
+    "body": [
+      "else:",
+      "\t${0:pass}"
+    ],
+    "description": "else statement"
+  },
   "elif": {
     "prefix": "elif",
     "body": [
@@ -45,29 +38,19 @@
     ],
     "description": "elif statement"
   },
-  "else": {
-    "prefix": "else",
-    "body": [
-      "else",
-      "\t${0:pass}"
-    ],
-    "description": "else statement"
-  },
-  "ifelse": {
-    "prefix": "ifelse",
-    "body": [
-      "if ${1:condition}:",
-      "\t${2:pass}",
-      "else:",
-      "\t${0:pass}"
-    ],
-    "description": "if statement and else"
-  },
   "for": {
     "prefix": "for",
     "body": [
-      "for ${1:value} in ${2:iterable}:",
-      "\t${3:pass}"
+      "for ${1:e} in ${2:expr}:",
+      "\t${0:pass}"
+    ],
+    "description": "for loop"
+  },
+  "fori": {
+    "prefix": "fori",
+    "body": [
+      "for ${1:i}, ${2:e} in enumerate(${3:expr}):",
+      "\t${0:pass}"
     ],
     "description": "for loop"
   },
@@ -75,7 +58,7 @@
     "prefix": "while",
     "body": [
       "while ${1:condition}:",
-      "\t${2:pass}"
+      "\t${0:pass}"
     ],
     "description": "while loop"
   }
