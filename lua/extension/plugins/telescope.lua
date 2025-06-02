@@ -6,6 +6,7 @@ return {
         { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
         'nvim-telescope/telescope-ui-select.nvim'
     },
+    cmd = 'Telescope',
     keys = {
         { '<leader>fd', '<cmd>Telescope diagnostics<cr>', desc = '查找 lsp 诊断' },
         { '<leader>ff', '<cmd>Telescope find_files<cr>', desc = '查找文件' },

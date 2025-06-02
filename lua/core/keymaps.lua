@@ -77,3 +77,6 @@ vim.keymap.set('n', '<leader>wd', '<cmd>close<cr>', kmerge(opts, { desc = '关�
 
 -- 快捷取消高亮
 vim.keymap.set('n', '<leader>nh', '<cmd>nohlsearch<cr>', kmerge(opts, { desc= '取消搜索高亮' }))
+
+-- 快速创建文件
+vim.keymap.set('n', '<leader>nf', '<cmd>ene | startinsert<cr>', kmerge(opts, { desc= '创建空白文件' }))
