@@ -136,19 +136,20 @@ return {
             end
         end
 
+        -- 默认 on_attach
+        local default_on_attach = function (client)
+            client.server_capabilities.documentFormattingProvider = false
+            client.server_capabilities.documentRangeFormattingProvider = false
+        end
+
+        -- 默认 capabilities
+        local default_capabilities = vim.lsp.protocol.make_client_capabilities()
+
         -- 配置 lsp 服务器
         local configuration_lsp_server = function (config)
-            local capabilities = vim.lsp.protocol.make_client_capabilities()
-            capabilities = vim.tbl_deep_extend('force', capabilities, {
-                formatting = false, -- 禁用格式化
-                rangeFormatting = false -- 禁用范围格式化
-            })
-            -- 当传入配置的 capabilities 不为空时才进行合并
-            if config.capabilities then
-                capabilities = vim.tbl_deep_extend('force', capabilities, config.capabilities)
-            end
-            -- 再次合并 blink 提供的 capabilities
-            config.capabilities = cmp.get_lsp_capabilities(capabilities)
+            local merged = vim.tbl_deep_extend('force', default_capabilities, config.capabilities or {})
+            config.capabilities = cmp.get_lsp_capabilities(merged)
+            config.on_attach = default_on_attach
         end
 
         -- 启动 lsp 服务器

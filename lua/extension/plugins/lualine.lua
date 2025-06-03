@@ -4,6 +4,7 @@ return {
         'folke/tokyonight.nvim',
         'nvim-tree/nvim-web-devicons'
     },
+    lazy = true,
     opts = {
         options = {
             theme = {

@@ -5,7 +5,7 @@ return {
         'folke/tokyonight.nvim',
         'nvim-tree/nvim-web-devicons'
     },
-    lazy = false,
+    lazy = true,
     keys = {
         { 'H', '<cmd>BufferLineCyclePrev<cr>', desc = '跳转到左侧 buffer' },
         { 'L', '<cmd>BufferLineCycleNext<cr>', desc = '跳转到右侧 buffer' },

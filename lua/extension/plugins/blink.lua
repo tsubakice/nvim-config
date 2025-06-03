@@ -9,6 +9,7 @@ return {
         'onsails/lspkind.nvim',
         'nvim-tree/nvim-web-devicons'
     },
+    event = { 'CmdlineEnter', 'InsertEnter' },
     opts = {
         keymap = {
             preset = 'none',
@@ -79,7 +80,13 @@ return {
             keymap = { preset = 'inherit' },
             completion = {
                 menu = { auto_show = true },
-                ghost_text = { enabled = true }
+                ghost_text = { enabled = true },
+                list = {
+                    selection = {
+                        preselect = true,
+                        auto_insert = false
+                    }
+                }
             }
         },
         signature = {
